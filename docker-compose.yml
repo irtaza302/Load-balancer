@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  load_balancer:
+    build:
+      context: .
+      dockerfile: Dockerfile.load_balancer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend1
+      - backend2
+
+  backend1:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=backend1.py
+    command: ["python", "backend1.py"]
+
+  backend2:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5001:5001"
+    environment:
+      - FLASK_APP=backend2.py
+    command: ["python", "backend2.py"]
