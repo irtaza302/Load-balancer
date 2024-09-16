@@ -29,7 +29,7 @@ This repository contains a simple implementation of a load balancer using Python
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/your-username/your-repository.git
+    git clone https://github.com/irtaza302/Load-balancer.git
     cd your-repository
     ```
 
